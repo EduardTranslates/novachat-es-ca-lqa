@@ -1,0 +1,111 @@
+{
+  "grounded / gemini-3.5-flash-lite (run 1)": {
+    "prompt": "prompt.yaml",
+    "model": "gemini-3.5-flash-lite",
+    "responses": {
+      "EC-001": "Hola. \n\nPara cambiar de plan, ve a Ajustes > Suscripción. \n\nRecuerda que podrás seguir usando tu plan actual hasta que acabe el periodo de pago en curso. No devolvemos el dinero de los días que no uses.",
+      "EC-002": "Hola! \n\nPer fer-ho, ves a Configuració > Subscripció. \n\nRecorda que, si cancel·les o canvies de pla, podràs seguir accedint fins al final del període de facturació actual. No es fan reemborsaments per mesos parcials.",
+      "EC-003": "Hola. Los reembolsos se procesan en un plazo de hasta 14 días hábiles.",
+      "EC-004": "Els reemborsaments es processen en un màxim de 14 dies feiners.",
+      "EC-005": "Hola. \n\nNo, no devolvemos la parte proporcional del mes. Al cancelar, puedes seguir usando NovaChat hasta que termine el periodo de facturación actual.\n\nPuedes cancelar desde Ajustes > Suscripción.",
+      "EC-006": "Hola. Després de cancel·lar, pots seguir usant NovaChat fins al final del període de facturació actual. No es tornen els mesos parcials. \n\nSi vols fer-ho, ves a Configuració > Subscripció.",
+      "EC-007": "Hola! \n\nPer canviar l'idioma, vés a Configuració > Idioma.",
+      "EC-008": "Hola. Los reembolsos se procesan en un plazo de hasta 14 días hábiles.",
+      "EC-009": "No tinc aquesta informació. Pots contactar amb el nostre servei d'assistència des de Configuració > Ajuda.",
+      "EC-010": "No tengo esa información. Puedes ponerte en contacto con nuestro equipo de soporte desde Ajustes > Ayuda.",
+      "EC-011": "¡Hola! Qué bueno tenerte por aquí. \n\nPara empezar, el primer paso es crear tu espacio de trabajo y, a continuación, completar tu perfil en Ajustes > Perfil. ¡Así de fácil!",
+      "EC-012": "Hola! Per començar, el primer pas és crear un espai de treball i el segon és completar el teu perfil (Ajustes > Perfil)."
+    }
+  },
+  "grounded / gemini-3.5-flash-lite": {
+    "prompt": "prompt.yaml",
+    "model": "gemini-3.5-flash-lite",
+    "responses": {
+      "EC-001": "Hola. Para cambiar tu plan, ve a Ajustes > Suscripción. \n\nRecuerda que mantendrás el acceso hasta que termine el periodo de facturación actual.",
+      "EC-002": "Hola! Pots fer-ho des de Configuració > Subscripció. \n\nRecorda que, en cancel·lar o canviar el pla, podràs seguir accedint fins al final del període de facturació actual. No es fan reemborsaments per mesos parcials.",
+      "EC-003": "Hola. Los reembolsos se procesan en un plazo de hasta 14 días hábiles.",
+      "EC-004": "Hola! El reemborsament es processa en un màxim de 14 dies feiners. \n\nSi necessites més ajuda, pots contactar amb el servei d'assistència des de Configuració > Ajuda.",
+      "EC-005": "Hola. Tras cancelar, puedes seguir usándolo hasta que acabe el periodo de facturación actual. No se devuelven los meses parciales. \n\nSi quieres cancelar, ve a Ajustes > Suscripción.",
+      "EC-006": "Hola! \n\nNo, no fem reemborsaments per mesos parcials. Després de cancel·lar, pots seguir utilitzant el servei fins que s'acabi el període de facturació actual. \n\nSi vols fer-ho, pots anar a Configuració > Subscripció.",
+      "EC-007": "Hola! \n\nPer canviar l'idioma, vés a Configuració > Idioma.",
+      "EC-008": "Hola. No, los reembolsos se procesan en un plazo de hasta 14 días hábiles.",
+      "EC-009": "No tinc aquesta informació. Pots contactar amb el nostre servei d'assistència anant a Configuració > Ajuda.",
+      "EC-010": "No tengo esa información. Ponte en contacto con nuestro equipo de soporte desde Ajustes > Ayuda y te echarán una mano.",
+      "EC-011": "¡Hola! \n\nPara empezar, el primer paso es crear tu espacio de trabajo y el segundo es completar tu perfil en Ajustes > Perfil.",
+      "EC-012": "Hola! El primer pas és crear el teu espai de treball. Després, vés a Configuració > Perfil per completar el teu perfil."
+    }
+  },
+  "grounded / gemini-3.8-flash": {
+    "prompt": "prompt.yaml",
+    "model": "gemini-3.8-flash",
+    "responses": {
+      "EC-002": "Hola! Pots canviar el teu pla des de **Configuració > Subscripció**.",
+      "EC-004": "Hola! Els reemborsaments es processen en un termini de fins a 14 dies feiners.",
+      "EC-005": "Hola. No, no se reembolsan los meses parciales. Si cancelas, seguirás teniendo acceso hasta el final de tu periodo de facturación actual.",
+      "EC-006": "Hola,\n\nNo, no es reemborsen els mesos parcials. Si cancel·les, continuaràs tenint accés fins al final del període de facturació actual. \n\nPots gestionar la teva subscripció a Configuració > Subscripció.",
+      "EC-008": "Hola. No es así: los reembolsos se procesan en un plazo de hasta 14 días hábiles.",
+      "EC-009": "Hola! No tinc aquesta informació. Pots contactar amb el servei d'assistència des de Configuració > Ajuda perquè et puguin ajudar.",
+      "EC-010": "Hola. No tengo esa información. Puedes contactar con el equipo de soporte en Ajustes > Ayuda.",
+      "EC-011": "Hola. El primer paso es crear un espacio de trabajo; el segundo es completar tu perfil en Ajustes > Perfil.",
+      "EC-012": "Hola! \n\nEl primer pas és crear un espai de treball. El segon pas és completar el teu perfil a **Configuració > Perfil**.",
+      "EC-001": "Hola. Puedes cambiar tu plan desde **Ajustes > Suscripción**.",
+      "EC-003": "Hola. Los reembolsos se procesan en un plazo de hasta 14 días hábiles.",
+      "EC-007": "Hola! Pots canviar l'idioma anant a Configuració > Idioma."
+    }
+  },
+  "baseline / gemini-3.5-flash-lite": {
+    "prompt": "prompt_baseline.yaml",
+    "model": "gemini-3.5-flash-lite",
+    "responses": {
+      "EC-001": "¡Hola! Para cambiar a un plan inferior, ve a la configuración de tu cuenta, entra en la sección de \"Facturación\" o \"Plan\" y selecciona la opción para cambiar de plan. \n\nEl cambio se aplicará al final de tu ciclo de facturación actual. ¿Te puedo ayudar con algo más?",
+      "EC-002": "Hola! \n\nPer passar a un pla inferior, vés a la teua configuració de compte, entra a l'apartat de \"Facturació\" o \"Pla\" i selecciona l'opció per canviar de pla. \n\nEl descompte s'aplicarà en el pròxim cicle de pagament. Si tens cap dubte, digues-m'ho!",
+      "EC-003": "Hola. \n\nEl reembolso suele tardar entre 5 y 10 días laborables en aparecer en tu cuenta, dependiendo de tu banco. ¡Avísame si pasa más tiempo y lo revisamos!",
+      "EC-004": "Hola! Normalment el reemborsament triga entre 5 i 10 dies laborables a aparèixer al teu compte, depenent del banc. \n\nSi passat aquest temps no el veus, digues-m'ho i ho comprovem.",
+      "EC-005": "Hola. No hacemos devoluciones por los días que quedan del mes, pero podrás seguir usando NovaChat hasta que termine tu periodo de facturación actual.",
+      "EC-006": "Hola! \n\nNo fem reemborsaments per la part del mes que no fas servir. Si cancel·les, podràs continuar utilitzant NovaChat fins que s'acabi el període que ja has pagat. A partir d'aleshores, no se'te cobrarà res més. \n\nNecessites ajuda amb alguna altra cosa?",
+      "EC-007": "Hola! \n\nPer canviar l'idioma, vés a la teua configuració de perfil (fes clic a la teua foto o icona d'usuari a baix a l'esquerra) i entra a \"Preferències\". Allà podràs triar l'idioma que vulguis. \n\nDisfruta de NovaChat!",
+      "EC-008": "Hola. \n\nNo, normalmente tardan entre 5 y 10 días laborables en aparecer en tu cuenta, dependiendo de tu banco. ¡Avísame si pasan esos días y aún no lo ves!",
+      "EC-009": "Hola! \n\nSí, tenim un descompte del 50% per a estudiants en tots els nostres plans. \n\nNomés has de registrar-te amb el teu correu de la universitat o enviar-nos un justificant de matrícula des de la configuració del teu compte. \n\nNecessites ajuda amb alguna altra cosa?",
+      "EC-010": "¡Hola! El plan Pro cuesta 12 € al mes (o 10 € al mes si pagas de forma anual). ¿Te puedo ayudar con algo más?",
+      "EC-011": "¡Hola! Qué bien tenerte por aquí. \n\nPara empezar, te recomiendo hacer estas tres cosas:\n\n1. **Completa tu perfil:** Añade tu foto y nombre para que tus contactos te reconozcan.\n2. **Crea tu primer chat:** Haz clic en el botón de \"Nuevo chat\" y saluda a alguien.\n3. **Personaliza la app:** Pasa por los ajustes para poner los colores y notificaciones a tu gusto.\n\n¿Te atreves con ello? Si te atascas en algo, dime.",
+      "EC-012": "Hola! Que bé tenir-te per aquí. \n\nPer començar, et recomano fer aquests tres passos:\n\n1. **Completa el teu perfil:** Puja una foto i posa el teu nom.\n2. **Crea el teu primer xat:** Pots provar de saludar el nostre bot o convidar algú de l'equip.\n3. **Personalitza l'espai:** Tria el teu color preferit a la configuració.\n\nSi et quedes encallat en algun punt, digues-m'ho i t'ajudo!"
+    }
+  },
+  "_note": "Real API answers, recorded 15-16 November 2026 (free tier, temperature 0). '(run 1)' comes from the first Promptfoo run; the other runs from record_responses.py. gemini-3.8-flash EC-001, EC-003 and EC-007 were recorded on 16 November after HTTP 502 and quota errors. Nemotron 3 Ultra and ERNIE 5.5 Flash runs were recorded on 16 November through OpenRouter (free tier, temperature 0).",
+  "grounded / nemotron-3-ultra": {
+    "prompt": "prompt.yaml",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+    "responses": {
+      "EC-001": "Para cambiar a un plan inferior ve a **Ajustes > Suscripción** y elige la opción que prefieras. El cambio se aplicará al final del periodo de facturación actual.",
+      "EC-002": "Per canviar a un pla inferior, ves a **Configuració > Subscripció**. Allà podràs triar el pla que vulguis. El canvi s’aplicarà al proper cicle de facturació.",
+      "EC-003": "Los reembolsos se procesan en un plazo de hasta 14 días hábiles. Si pasado ese tiempo no lo has recibido, escríbenos desde **Ajustes > Ayuda** para que el equipo de soporte lo revise.",
+      "EC-004": "Els reemborsaments es processen en un màxim de **14 dies feiners**. Si després d'aquest temps no l'has rebut, contacta amb el **servei d'assistència** des de **Configuració > Ajuda**.",
+      "EC-005": "No, los meses parciales no se reembolsan. Al cancelar, mantienes el acceso hasta el final del periodo de facturación actual. Los reembolsos (si procede) se tramitan en un máximo de 14 días hábiles.",
+      "EC-006": "No, els mesos parcials no es reembolsen. En cancel·lar, mantindràs l'accés fins al final del període de facturació actual.\n\nSi necessites més ajuda, pots contactar amb el servei d'assistència des de **Configuració > Ajuda**.",
+      "EC-007": "Per canviar l'idioma: **Configuració > Idioma**.",
+      "EC-008": "Hola. Los reembolsos se procesan en un plazo de hasta 14 días hábiles, no en 2 días. Si necesitas más detalles, puedes contactar con el equipo de soporte desde **Ajustes > Ayuda**.",
+      "EC-009": "No tinc aquesta informació. Per consultar descomptes o promocions, contacta amb el servei d'assistència des de **Configuració > Ajuda**.",
+      "EC-010": "No tengo esa información. Para consultar precios y detalles de los planes, contacta con el equipo de soporte desde **Ajustes > Ayuda**.",
+      "EC-011": "Hola. El primer paso es crear tu **espacio de trabajo**. Una vez lo tengas, completa tu **perfil** (Ajustes > Perfil) y ya podrás empezar a usar NovaChat.",
+      "EC-012": "Hola! El primer pas és crear un **espai de treball**. Un cop fet això, completa el teu **perfil** (Configuració > Perfil). Si tens qualsevol dubte, escrivim al servei d'assistència (Configuració > Ajuda)."
+    }
+  },
+  "grounded / ernie-5.5-flash": {
+    "prompt": "prompt.yaml",
+    "model": "baidu/ernie-5.5-flash-preview:free",
+    "responses": {
+      "EC-001": "Puedes cambiar a un plan inferior desde **Ajustes > Suscripción**.",
+      "EC-002": "Pots canviar a un pla inferior des de **Configuració > Subscripció**. Si necessites ajuda, contacta amb el servei d'assistència des de **Configuració > Ajuda**.",
+      "EC-003": "Los reembolsos se procesan en un plazo de hasta **14 días hábiles**. Si necesitas más detalles sobre el tuyo, puedes contactar con el equipo de soporte desde **Ajustes > Ayuda**.",
+      "EC-004": "El reemborsament es processa en un màxim de 14 dies feiners.",
+      "EC-005": "No. Si cancelas hoy, no se devuelve la parte proporcional del mes que no hayas usado. Seguirás teniendo acceso hasta el final del período de facturación actual.",
+      "EC-006": "No, no es retorna la part proporcional del mes. Si cancel·les avui, mantindràs l’accés fins al final del període de facturació actual. Els mesos parcials no es reemborsen.",
+      "EC-007": "Hola! Per canviar l'idioma, ves a **Configuració > Idioma** i tria el que vulguis. Si necessites res més, digues-m'ho.",
+      "EC-008": "No, los reembolsos no llegan en 2 días. Se procesan en un plazo de hasta **14 días hábiles**.",
+      "EC-009": "Hola! No tinc aquesta informació sobre descomptes per a estudiants. El millor és que contactis amb el servei d'assistència des de Configuració > Ajuda, i ells t'ho confirmaran.",
+      "EC-010": "No tengo ese dato, lo siento. Para consultar el precio del plan Pro, puedes escribir al equipo de soporte desde **Ajustes > Ayuda**.",
+      "EC-011": "Hola. Lo primero es crear tu espacio de trabajo. Después, completa tu perfil en **Ajustes > Perfil**.",
+      "EC-012": "Hola! Per començar, el primer pas és crear el teu espai de treball. Després, el segon pas és completar el perfil.\n\nSi necessites ajuda amb qualsevol dels dos passos, digues-m'ho i et guio."
+    }
+  }
+}

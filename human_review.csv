@@ -1,0 +1,73 @@
+case_id,locale,run,auto_result,auto_failed_metrics,human_verdict,human_severity,human_notes
+EC-001,es-ES,grounded / gemini-3.5-flash-lite (run 1),PASS,,QUERY,,Correct path. Adds that access and no refund apply to a downgrade: the source only covers cancelling. Query for the product owner
+EC-001,es-ES,grounded / gemini-3.5-flash-lite,PASS,,QUERY,,Correct path. Extends the cancellation policy to a downgrade
+EC-001,es-ES,grounded / gemini-3.8-flash,PASS,,PASS,,
+EC-001,es-ES,baseline / gemini-3.5-flash-lite,FAIL,hallucination,FAIL,Critical,Invented menu path: 'Facturación' or 'Plan'
+EC-001,es-ES,grounded / nemotron-3-ultra,PASS,,QUERY,,Correct path. Adds 'El cambio se aplicará al final del periodo de facturación actual': the source does not say when a downgrade takes effect. Query for the product owner
+EC-001,es-ES,grounded / ernie-5.5-flash,PASS,,PASS,,
+EC-002,ca-ES,grounded / gemini-3.5-flash-lite (run 1),PASS,,QUERY,,Correct path. Same extension of the cancellation policy to a plan change
+EC-002,ca-ES,grounded / gemini-3.5-flash-lite,PASS,,QUERY,,Correct path. Extends the cancellation policy to a plan change
+EC-002,ca-ES,grounded / gemini-3.8-flash,PASS,,PASS,,
+EC-002,ca-ES,baseline / gemini-3.5-flash-lite,FAIL,fluency + hallucination,FAIL,Critical,"Invented menu path; 'El descompte' for a plan change (wrong word, Major); 'vés' (Minor); Valencian 'teua' inconsistent with 'teu/teva' (Minor)"
+EC-002,ca-ES,grounded / nemotron-3-ultra,PASS,,QUERY,,Correct path; post-2016 'ves'. Adds 'El canvi s'aplicarà al proper cicle de facturació': not in the source. Same query as EC-001
+EC-002,ca-ES,grounded / ernie-5.5-flash,PASS,,PASS,,
+EC-003,es-ES,grounded / gemini-3.5-flash-lite (run 1),PASS,,PASS,,
+EC-003,es-ES,grounded / gemini-3.5-flash-lite,PASS,,PASS,,
+EC-003,es-ES,grounded / gemini-3.8-flash,PASS,,PASS,,
+EC-003,es-ES,baseline / gemini-3.5-flash-lite,FAIL,policy,FAIL,Critical,Invented refund window: 5-10 working days
+EC-003,es-ES,grounded / nemotron-3-ultra,PASS,,PASS,,Narrow no-break space (U+202F) in '14 días hábiles'; typographically valid
+EC-003,es-ES,grounded / ernie-5.5-flash,PASS,,PASS,,
+EC-004,ca-ES,grounded / gemini-3.5-flash-lite (run 1),PASS,,PASS,,No greeting; acceptable
+EC-004,ca-ES,grounded / gemini-3.5-flash-lite,PASS,,PASS,,
+EC-004,ca-ES,grounded / gemini-3.8-flash,PASS,,PASS,,
+EC-004,ca-ES,baseline / gemini-3.5-flash-lite,FAIL,policy,FAIL,Critical,Invented refund window: 5-10 working days
+EC-004,ca-ES,grounded / nemotron-3-ultra,PASS,,PASS,,
+EC-004,ca-ES,grounded / ernie-5.5-flash,PASS,,PASS,,No greeting; acceptable
+EC-005,es-ES,grounded / gemini-3.5-flash-lite (run 1),PASS,,PASS,,
+EC-005,es-ES,grounded / gemini-3.5-flash-lite,PASS,,PASS,,
+EC-005,es-ES,grounded / gemini-3.8-flash,PASS,,PASS,,
+EC-005,es-ES,baseline / gemini-3.5-flash-lite,PASS,,PASS,,"Correct policy, natural es-ES"
+EC-005,es-ES,grounded / nemotron-3-ultra,FAIL,policy,FAIL,Major,"Says partial months are not refunded, then 'Los reembolsos (si procede) se tramitan...' leaves an exception open"
+EC-005,es-ES,grounded / ernie-5.5-flash,PASS,,PASS,,
+EC-006,ca-ES,grounded / gemini-3.5-flash-lite (run 1),PASS,,PASS,,
+EC-006,ca-ES,grounded / gemini-3.5-flash-lite,PASS,,PASS,,
+EC-006,ca-ES,grounded / gemini-3.8-flash,PASS,,PASS,,
+EC-006,ca-ES,baseline / gemini-3.5-flash-lite,PASS,,FAIL,Minor,Policy correct; 'se'te cobrarà' should be 'se't cobrarà' (grammar). Missed by the suite
+EC-006,ca-ES,grounded / nemotron-3-ultra,FAIL,cultural_dialectal,FAIL,Minor,Policy correct; Castilianism 'reembolsen' for Catalan 'reemborsen'
+EC-006,ca-ES,grounded / ernie-5.5-flash,PASS,,PASS,,
+EC-007,ca-ES,grounded / gemini-3.5-flash-lite (run 1),FAIL,fluency,FAIL,Minor,'vés' (pre-2016 accent). The same run writes 'ves' in EC-002: inconsistent
+EC-007,ca-ES,grounded / gemini-3.5-flash-lite,FAIL,fluency,FAIL,Minor,'vés' (pre-2016 accent)
+EC-007,ca-ES,grounded / gemini-3.8-flash,PASS,,PASS,,Avoids the imperative: 'anant a Configuració > Idioma'
+EC-007,ca-ES,baseline / gemini-3.5-flash-lite,FAIL,cultural_dialectal + fluency + hallucination,FAIL,Critical,"Invented UI (profile photo > 'Preferències'); 'Disfruta' (Castilianism, Major); 'vés'; 'teua'"
+EC-007,ca-ES,grounded / nemotron-3-ultra,PASS,,PASS,,"Terse fragment ('Per canviar l'idioma: Configuració > Idioma'), avoids the imperative. Acceptable"
+EC-007,ca-ES,grounded / ernie-5.5-flash,PASS,,PASS,,"Correct post-2016 'ves' (no accent) and idiomatic 'Si necessites res més, digues-m'ho'"
+EC-008,es-ES,grounded / gemini-3.5-flash-lite (run 1),PASS,,PASS,,States 14 days but does not explicitly say the user's '2 days' is wrong. Acceptable
+EC-008,es-ES,grounded / gemini-3.5-flash-lite,PASS,,PASS,,Explicit 'No' plus the correct figure
+EC-008,es-ES,grounded / gemini-3.8-flash,PASS,,PASS,,'No es así' explicitly corrects the false premise
+EC-008,es-ES,baseline / gemini-3.5-flash-lite,FAIL,policy,FAIL,Critical,Rejects the false premise but invents 5-10 working days
+EC-008,es-ES,grounded / nemotron-3-ultra,PASS,,PASS,,Explicit 'no en 2 días' plus the correct figure (with U+202F)
+EC-008,es-ES,grounded / ernie-5.5-flash,PASS,,PASS,,Explicit 'No' plus the correct figure
+EC-009,ca-ES,grounded / gemini-3.5-flash-lite (run 1),PASS,,PASS,,
+EC-009,ca-ES,grounded / gemini-3.5-flash-lite,PASS,,PASS,,
+EC-009,ca-ES,grounded / gemini-3.8-flash,PASS,,PASS,,
+EC-009,ca-ES,baseline / gemini-3.5-flash-lite,FAIL,hallucination + terminology,FAIL,Critical,Invented 50% student discount and a sign-up procedure
+EC-009,ca-ES,grounded / nemotron-3-ultra,PASS,,PASS,,
+EC-009,ca-ES,grounded / ernie-5.5-flash,PASS,,PASS,,
+EC-010,es-ES,grounded / gemini-3.5-flash-lite (run 1),PASS,,PASS,,
+EC-010,es-ES,grounded / gemini-3.5-flash-lite,PASS,,PASS,,
+EC-010,es-ES,grounded / gemini-3.8-flash,PASS,,PASS,,
+EC-010,es-ES,baseline / gemini-3.5-flash-lite,FAIL,hallucination + terminology,FAIL,Critical,"Invented prices: 12 EUR/month, 10 EUR annual"
+EC-010,es-ES,grounded / nemotron-3-ultra,PASS,,PASS,,
+EC-010,es-ES,grounded / ernie-5.5-flash,PASS,,PASS,,
+EC-011,es-ES,grounded / gemini-3.5-flash-lite (run 1),PASS,,PASS,,"'Qué bueno tenerte por aquí' reads Latin American; es-ES 'Qué bien'. Preferential, not an error"
+EC-011,es-ES,grounded / gemini-3.5-flash-lite,PASS,,PASS,,
+EC-011,es-ES,grounded / gemini-3.8-flash,PASS,,PASS,,
+EC-011,es-ES,baseline / gemini-3.5-flash-lite,FAIL,terminology,FAIL,Major,Skips the workspace step; invents a 'Nuevo chat' button
+EC-011,es-ES,grounded / nemotron-3-ultra,PASS,,PASS,,
+EC-011,es-ES,grounded / ernie-5.5-flash,PASS,,PASS,,
+EC-012,ca-ES,grounded / gemini-3.5-flash-lite (run 1),FAIL,cultural_dialectal,FAIL,Major,Spanish menu path 'Ajustes > Perfil' in a Catalan answer
+EC-012,ca-ES,grounded / gemini-3.5-flash-lite,FAIL,fluency,FAIL,Minor,'vés' (pre-2016 accent)
+EC-012,ca-ES,grounded / gemini-3.8-flash,PASS,,PASS,,
+EC-012,ca-ES,baseline / gemini-3.5-flash-lite,FAIL,terminology,FAIL,Major,"Skips the workspace step; invents a bot; masculine generic 'encallat' (Major, inclusive policy); 'Puja' vs glossary 'Penja' (Minor)"
+EC-012,ca-ES,grounded / nemotron-3-ultra,PASS,,FAIL,Minor,'escrivim al servei d'assistència' ('we write') instead of imperative 'escriu' (grammar). Missed by the suite
+EC-012,ca-ES,grounded / ernie-5.5-flash,PASS,,PASS,,
