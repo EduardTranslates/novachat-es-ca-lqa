@@ -1,0 +1,30 @@
+# Caché y archivos compilados de Python
+__pycache__/
+*.py[cod]
+
+# Entornos virtuales de Python
+.venv/
+venv/
+
+# Cachés de herramientas de Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Dependencias de Node / Promptfoo
+node_modules/
+
+# Variables de entorno y claves API locales
+.env
+.env.*
+!.env.example
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos temporales de edición
+*.swp
+*.swo
+*~
+~$*
