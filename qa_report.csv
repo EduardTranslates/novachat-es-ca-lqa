@@ -1,0 +1,15 @@
+id,locale,check,mqm_category,severity,message,target
+UI-001,es-ES,gendered_language,Cultural / dialectal appropriateness,Major,Masculine generic found: bienvenido,"¡Bienvenido de nuevo, {name}!"
+UI-003,es-ES,placeholder_mismatch,Accuracy,Major,"Source has ['{count}'], target has ['{cuont}']",Tienes {cuont} mensajes nuevos
+UI-004,es-ES,glossary,Terminology,Minor,'Settings' should be 'Ajustes',Configuración
+UI-005,es-ES,missing_inverted_mark,Fluency,Minor,Question without opening '¿',Quieres cancelar tu suscripción?
+UI-006,es-ES,length_limit,UX clarity,Major,"72 chars, limit is 50 (+22)",No se ha podido conectar con el servidor. Vuelve a intentarlo más tarde.
+UI-007,es-ES,untranslated,Accuracy,Major,Target is identical to source,Upgrade
+UI-007,es-ES,glossary,Terminology,Minor,'Upgrade' should be 'Mejorar plan',Upgrade
+UI-008,es-ES,double_space,Fluency,Minor,Double space in target,Tu archivo se ha  subido.
+UI-011,ca-ES,gendered_language,Cultural / dialectal appropriateness,Major,Masculine generic found: benvingut,"Benvingut de nou, {name}!"
+UI-012,ca-ES,glossary,Terminology,Minor,'Settings' should be 'Configuració',Configuración
+UI-012,ca-ES,castilianism,Cultural / dialectal appropriateness,Major,Castilianized form: configuración,Configuración
+UI-015,ca-ES,punt_volat,Fluency,Minor,Wrong middle dot: use 'l·l',Nivell d'intel.ligència
+UI-016,ca-ES,placeholder_mismatch,Accuracy,Major,"Source has ['%s'], target has []",El pagament ha fallat
+UI-019,ca-ES,edge_whitespace,Fluency,Minor,Leading or trailing whitespace,S'ha penjat el fitxer. 
