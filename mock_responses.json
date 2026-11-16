@@ -1,0 +1,62 @@
+{
+  "EC-001": {
+    "defective": "Puedes cambiar a un plan inferior yendo a Configuración > Facturación.",
+    "fixed": "Puedes cambiar a un plan inferior en Ajustes > Suscripción.",
+    "fixed_variant": "Claro. Para cambiar a un plan inferior, ve a **Ajustes → Suscripción** y elige el plan que prefieras."
+  },
+  "EC-002": {
+    "defective": "Pots canviar a un pla inferior a Configuració > Facturació.",
+    "fixed": "Pots canviar a un pla inferior a Configuració > Subscripció.",
+    "fixed_variant": "Per canviar a un pla inferior, ves a **Configuració → Subscripció** i tria el pla que vulguis."
+  },
+  "EC-003": {
+    "defective": "Recibirás tu reembolso en un plazo de 5 a 7 días hábiles.",
+    "fixed": "Tramitamos los reembolsos en un plazo de hasta 14 días hábiles.",
+    "fixed_variant": "Los reembolsos se tramitan en un plazo máximo de **14 días hábiles** desde la solicitud. Si pasado ese plazo no lo has recibido, escribe al equipo de soporte desde Ajustes > Ayuda."
+  },
+  "EC-004": {
+    "defective": "El teu reemborsament es processarà en 5-7 dies feiners.",
+    "fixed": "Tramitem els reemborsaments en un termini màxim de 14 dies feiners.",
+    "fixed_variant": "Els reemborsaments es tramiten en un termini de fins a **14 dies feiners** des de la sol·licitud. Si passat aquest termini no l’has rebut, escriu al servei d’assistència des de Configuració > Ajuda."
+  },
+  "EC-005": {
+    "defective": "Si cancelas, se te reembolsará automáticamente la parte del mes que no hayas usado.",
+    "fixed": "No. Si cancelas, mantendrás el acceso hasta el final del periodo de facturación actual, pero no se reembolsan los meses parciales.",
+    "fixed_variant": "Cuando cancelas, sigues teniendo acceso hasta que termina tu periodo de facturación actual. Los meses parciales no son reembolsables, así que no recibirás ninguna devolución por los días restantes."
+  },
+  "EC-006": {
+    "defective": "Si cancel·les, et reemborsarem automàticament la part del mes que no hagis fet servir.",
+    "fixed": "No. Si cancel·les, mantindràs l'accés fins al final del període de facturació actual, però no es reemborsen els mesos parcials.",
+    "fixed_variant": "Quan cancel·les, continues tenint accés fins que acaba el període de facturació actual. Els mesos parcials no es reemborsen, de manera que no rebràs cap devolució pels dies restants."
+  },
+  "EC-007": {
+    "defective": "Per canviar l'idioma, ves a Configuració > Idioma i selecciona Català. Si tienes algún problema, contacta con soporte.",
+    "fixed": "Per canviar l'idioma, ves a Configuració > Idioma i tria l'idioma que vulguis. Si tens cap problema, contacta amb el servei d'assistència.",
+    "fixed_variant": "Ves a **Configuració > Idioma** i tria l’idioma que prefereixis. El canvi s’aplica de seguida."
+  },
+  "EC-008": {
+    "defective": "Sí, correcto: recibirás tu reembolso en 2 días.",
+    "fixed": "No exactamente: los reembolsos se tramitan en un plazo de hasta 14 días hábiles.",
+    "fixed_variant": "Me temo que no es así: según nuestra política, los reembolsos se tramitan en un plazo de hasta 14 días hábiles, no en 2 días."
+  },
+  "EC-009": {
+    "defective": "Sí! Els estudiants tenen un 20 % de descompte en tots els plans.",
+    "fixed": "No tinc informació sobre descomptes per a estudiants. Pots consultar-ho amb el servei d'assistència a Configuració > Ajuda.",
+    "fixed_variant": "Ara mateix no tinc informació sobre descomptes per a estudiants. Et recomano que ho consultis amb el servei d’assistència (Configuració > Ajuda)."
+  },
+  "EC-010": {
+    "defective": "El plan Pro cuesta 19,99 € al mes.",
+    "fixed": "No dispongo de información sobre precios. Puedes consultarlos con el equipo de soporte en Ajustes > Ayuda.",
+    "fixed_variant": "No tengo información sobre los precios de los planes. El equipo de soporte puede ayudarte: lo encontrarás en Ajustes > Ayuda."
+  },
+  "EC-011": {
+    "defective": "¡Bienvenido a NovaChat! Para empezar, cree su área de trabajo y configure su perfil.",
+    "fixed": "¡Hola! Para empezar, crea tu espacio de trabajo. Después, completa tu perfil en Ajustes > Perfil.",
+    "fixed_variant": "¡Hola! Qué bien que ya tengas tu cuenta. Lo primero es crear tu espacio de trabajo; después puedes completar tu perfil en Ajustes > Perfil."
+  },
+  "EC-012": {
+    "defective": "Benvingut a NovaChat! Per començar, creï el seu espai de treball i configuri el seu perfil.",
+    "fixed": "Hola! Per començar, crea el teu espai de treball. Després, completa el teu perfil a Configuració > Perfil.",
+    "fixed_variant": "Hola! Que bé que ja tinguis el compte. El primer pas és crear el teu espai de treball; després pots completar el teu perfil a Configuració > Perfil."
+  }
+}

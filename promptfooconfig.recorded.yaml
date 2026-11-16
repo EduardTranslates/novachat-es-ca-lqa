@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
+# Grades the recorded Gemini and OpenRouter answers saved in recorded/responses.json.
+# No API key needed. To record new answers: python record_responses.py
+#   npx promptfoo@latest eval -c promptfooconfig.recorded.yaml
+description: NovaChat ES/CA support assistant - recorded answers from Gemini and OpenRouter models (November 2026)
+
+prompts:
+  - file://prompt.yaml
+
+providers:
+  - id: file://recorded_provider.py
+    label: grounded / gemini-3.5-flash-lite (run 1)
+    config:
+      run: grounded / gemini-3.5-flash-lite (run 1)
+  - id: file://recorded_provider.py
+    label: grounded / gemini-3.5-flash-lite
+    config:
+      run: grounded / gemini-3.5-flash-lite
+  - id: file://recorded_provider.py
+    label: grounded / gemini-3.8-flash
+    config:
+      run: grounded / gemini-3.8-flash
+  - id: file://recorded_provider.py
+    label: baseline / gemini-3.5-flash-lite
+    config:
+      run: baseline / gemini-3.5-flash-lite
+  - id: file://recorded_provider.py
+    label: grounded / nemotron-3-ultra
+    config:
+      run: grounded / nemotron-3-ultra
+  - id: file://recorded_provider.py
+    label: grounded / ernie-5.5-flash
+    config:
+      run: grounded / ernie-5.5-flash
+
+defaultTest:
+  assert:
+    - type: python
+      value: file://assertions.py:language_matches_locale
+      metric: cultural_dialectal
+    - type: python
+      value: file://assertions.py:no_gendered_generics
+      metric: cultural_dialectal
+    - type: python
+      value: file://assertions.py:informal_register
+      metric: tone
+    - type: python
+      value: file://assertions.py:catalan_orthography
+      metric: fluency
+
+tests: file://eval_cases.jsonl

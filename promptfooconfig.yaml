@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
+description: NovaChat ES/CA support assistant - hallucination and localization regression suite (synthetic data)
+
+prompts:
+  - file://prompt.yaml
+
+# Offline mock providers: the suite runs with no API key.
+#   mock-defective returns the faulty answers from defect_log.csv -> every case must FAIL
+#   mock-fixed     returns the corrected answers                  -> every case must PASS
+#   mock-fixed-variant returns correct answers phrased differently (longer, Markdown,
+#                  typographic apostrophes)                       -> every case must PASS
+# To evaluate a real model, replace these entries with a real provider
+# (see https://www.promptfoo.dev/docs/providers/).
+providers:
+  - id: file://mock_provider.py
+    label: mock-defective
+    config:
+      mode: defective
+  - id: file://mock_provider.py
+    label: mock-fixed
+    config:
+      mode: fixed
+  - id: file://mock_provider.py
+    label: mock-fixed-variant
+    config:
+      mode: fixed_variant
+
+# Linguistic checks applied to every answer, whatever the question.
+defaultTest:
+  assert:
+    - type: python
+      value: file://assertions.py:language_matches_locale
+      metric: cultural_dialectal
+    - type: python
+      value: file://assertions.py:no_gendered_generics
+      metric: cultural_dialectal
+    - type: python
+      value: file://assertions.py:informal_register
+      metric: tone
+    - type: python
+      value: file://assertions.py:catalan_orthography
+      metric: fluency
+
+# Fact and policy checks, one test case per line.
+tests: file://eval_cases.jsonl
