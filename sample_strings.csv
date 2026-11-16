@@ -1,0 +1,21 @@
+id,locale,context,max_chars,source,target
+UI-001,es-ES,greeting,30,"Welcome back, {name}!","¡Bienvenido de nuevo, {name}!"
+UI-002,es-ES,button,15,Save changes,Guardar cambios
+UI-003,es-ES,notification,60,You have {count} new messages,Tienes {cuont} mensajes nuevos
+UI-004,es-ES,menu,20,Settings,Configuración
+UI-005,es-ES,dialog,60,Do you want to cancel your subscription?,Quieres cancelar tu suscripción?
+UI-006,es-ES,error,50,Could not connect to the server. Try again later.,No se ha podido conectar con el servidor. Vuelve a intentarlo más tarde.
+UI-007,es-ES,button,15,Upgrade,Upgrade
+UI-008,es-ES,toast,40,Your file was uploaded.,Tu archivo se ha  subido.
+UI-009,es-ES,label,40,Last updated: {date},Última actualización: {date}
+UI-010,es-ES,menu,20,Subscription,Suscripción
+UI-011,ca-ES,greeting,30,"Welcome back, {name}!","Benvingut de nou, {name}!"
+UI-012,ca-ES,menu,20,Settings,Configuración
+UI-013,ca-ES,dialog,60,Do you want to cancel your subscription?,Vols cancel·lar la teva subscripció?
+UI-014,ca-ES,notification,60,You have {count} new messages,Tens {count} missatges nous
+UI-015,ca-ES,label,40,Intelligence level,Nivell d'intel.ligència
+UI-016,ca-ES,error,40,Payment failed: %s,El pagament ha fallat
+UI-017,ca-ES,button,15,Save changes,Desa els canvis
+UI-018,ca-ES,menu,20,Subscription,Subscripció
+UI-019,ca-ES,toast,40,Your file was uploaded.,S'ha penjat el fitxer. 
+UI-020,ca-ES,label,40,Last updated: {date},Darrera actualització: {date}

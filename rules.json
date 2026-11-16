@@ -1,0 +1,14 @@
+{
+  "gendered_terms": {
+    "es-ES": ["bienvenido", "bienvenidos", "estimado", "registrado", "conectado"],
+    "ca-ES": ["benvingut", "benvinguts", "estimat", "registrat", "connectat"]
+  },
+  "castilianisms_ca": ["configuración", "cancelar", "vale", "bueno", "luego", "aplicación", "recurso", "ajustes", "suscripción", "ayuda", "facturación", "disfruta", "disfrutar", "reembolsar", "reembolsa", "reembolsen", "reembolsem", "reembolsat", "reembolsada", "reembolsament", "reembolso"],
+  "obsolete_diacritics_ca": ["vés", "dóna", "dónes", "véns", "vénen", "sóc", "móra"],
+  "catalan_ui_terms_in_es": ["configuració", "subscripció", "ajuda", "facturació"],
+  "allow_identical": ["OK", "Wi-Fi", "PDF", "NovaChat"],
+  "gendered_address_terms": {
+    "es-ES": ["bienvenido", "bienvenidos", "estimado", "estimados"],
+    "ca-ES": ["benvingut", "benvinguts", "estimat", "estimats"]
+  }
+}
