@@ -1,0 +1,41 @@
+id,source,case_id,locale,human_label,regex,judge,suite,note,judge_reason,answer
+JC-01,mock-defective,EC-005,es-ES,FAIL,FAIL,FAIL,FAIL,Promises an automatic pro-rata refund (defect D-006),"The answer incorrectly promises an automatic refund for the unused part of the month, violating the policy that partial months are not refunded.","Si cancelas, se te reembolsará automáticamente la parte del mes que no hayas usado."
+JC-02,mock-fixed,EC-005,es-ES,PASS,PASS,PASS,PASS,Corrected answer,The answer clearly states that partial months are not refunded and contains no contradictions or open possibilities for exceptions.,"No. Si cancelas, mantendrás el acceso hasta el final del periodo de facturación actual, pero no se reembolsan los meses parciales."
+JC-03,mock-fixed-variant,EC-005,es-ES,PASS,PASS,PASS,PASS,"Corrected answer, different wording",The answer clearly states that partial months are non-refundable and that the user will not receive a refund for any remaining days.,"Cuando cancelas, sigues teniendo acceso hasta que termina tu periodo de facturación actual. Los meses parciales no son reembolsables, así que no recibirás ninguna devolución por los días restantes."
+JC-04,mock-defective,EC-006,ca-ES,FAIL,FAIL,FAIL,FAIL,Promises an automatic pro-rata refund (defect D-006),"The answer promises an automatic refund for the unused portion of the month, which contradicts the policy stating partial months are not refunded.","Si cancel·les, et reemborsarem automàticament la part del mes que no hagis fet servir."
+JC-05,mock-fixed,EC-006,ca-ES,PASS,PASS,PASS,PASS,Corrected answer,The answer clearly states in Catalan that partial months are not refunded without offering any exceptions or contradicting itself.,"No. Si cancel·les, mantindràs l'accés fins al final del període de facturació actual, però no es reemborsen els mesos parcials."
+JC-06,mock-fixed-variant,EC-006,ca-ES,PASS,PASS,PASS,PASS,"Corrected answer, different wording",The answer clearly states in Catalan that partial months are not refunded and no money will be returned for the remaining days.,"Quan cancel·les, continues tenint accés fins que acaba el període de facturació actual. Els mesos parcials no es reemborsen, de manera que no rebràs cap devolució pels dies restants."
+JC-07,gemini: grounded / gemini-3.5-flash-lite (run 1),EC-005,es-ES,PASS,PASS,PASS,PASS,Real answer; states no partial refund,"The answer clearly states that unused partial months are not refunded, contains no promises of exceptions, and does not contradict itself.","Hola. 
+
+No, no devolvemos la parte proporcional del mes. Al cancelar, puedes seguir usando NovaChat hasta que termine el periodo de facturación actual.
+
+Puedes cancelar desde Ajustes > Suscripción."
+JC-08,gemini: grounded / gemini-3.5-flash-lite (run 1),EC-006,ca-ES,PASS,PASS,PASS,PASS,Real answer; states no partial refund,"The answer clearly states in Catalan that partial months are not refunded, contains no contradictions, and does not leave open any possibility for a refund.","Hola. Després de cancel·lar, pots seguir usant NovaChat fins al final del període de facturació actual. No es tornen els mesos parcials. 
+
+Si vols fer-ho, ves a Configuració > Subscripció."
+JC-09,gemini: grounded / gemini-3.5-flash-lite,EC-005,es-ES,PASS,PASS,PASS,PASS,Real answer; states no partial refund,The answer clearly states in Spanish that partial months are not refunded and does not leave open any exceptions or contradict itself.,"Hola. Tras cancelar, puedes seguir usándolo hasta que acabe el periodo de facturación actual. No se devuelven los meses parciales. 
+
+Si quieres cancelar, ve a Ajustes > Suscripción."
+JC-10,gemini: grounded / gemini-3.5-flash-lite,EC-006,ca-ES,PASS,PASS,PASS,PASS,Real answer; states no partial refund,The answer correctly states that partial months are not refunded and does not suggest any exceptions or contradict itself.,"Hola! 
+
+No, no fem reemborsaments per mesos parcials. Després de cancel·lar, pots seguir utilitzant el servei fins que s'acabi el període de facturació actual. 
+
+Si vols fer-ho, pots anar a Configuració > Subscripció."
+JC-11,gemini: grounded / gemini-3.8-flash,EC-005,es-ES,PASS,PASS,PASS,PASS,Real answer; states no partial refund,The answer clearly states that partial months are not refunded and does not suggest any exceptions or contradict itself.,"Hola. No, no se reembolsan los meses parciales. Si cancelas, seguirás teniendo acceso hasta el final de tu periodo de facturación actual."
+JC-12,gemini: grounded / gemini-3.8-flash,EC-006,ca-ES,PASS,PASS,PASS,PASS,Real answer; states no partial refund,The answer clearly states that partial months are not refunded and does not suggest any exceptions.,"Hola,
+
+No, no es reemborsen els mesos parcials. Si cancel·les, continuaràs tenint accés fins al final del període de facturació actual. 
+
+Pots gestionar la teva subscripció a Configuració > Subscripció."
+JC-13,gemini: baseline / gemini-3.5-flash-lite,EC-005,es-ES,PASS,PASS,PASS,PASS,Real answer; states no partial refund,The answer clearly states that refunds are not issued for the remaining days of the month without offering any exceptions or contradictions.,"Hola. No hacemos devoluciones por los días que quedan del mes, pero podrás seguir usando NovaChat hasta que termine tu periodo de facturación actual."
+JC-14,gemini: baseline / gemini-3.5-flash-lite,EC-006,ca-ES,PASS,PASS,PASS,PASS,Real answer; states no partial refund,The answer clearly states in Catalan that no refunds are given for the unused part of the month without offering any exceptions or contradicting itself.,"Hola! 
+
+No fem reemborsaments per la part del mes que no fas servir. Si cancel·les, podràs continuar utilitzant NovaChat fins que s'acabi el període que ja has pagat. A partir d'aleshores, no se'te cobrarà res més. 
+
+Necessites ajuda amb alguna altra cosa?"
+JC-15,synthetic trap,EC-005,es-ES,FAIL,PASS,FAIL,FAIL,"Promises a pro-rata refund but opens with a negation, so it matches the negation regex",The answer incorrectly promises a prorated refund for the unused portion of the month.,No te preocupes: te devolveremos la parte proporcional del mes. Mantienes el acceso hasta el final del periodo de facturación.
+JC-16,synthetic trap,EC-006,ca-ES,FAIL,PASS,FAIL,FAIL,"Says no refund, then offers a credit: a refund by another name","The answer promises a credit for unused days, which violates the policy prohibiting any refunds or credits for partial months.","No hi ha reemborsament dels mesos parcials, però t'afegirem un crèdit pels dies no utilitzats. L'accés continua fins al final del període de facturació."
+JC-17,synthetic trap,EC-005,es-ES,FAIL,PASS,FAIL,FAIL,Leaves an exception open that the policy does not allow,The answer leaves open the possibility of an exception by inviting the user to contact support to review their case.,"Normalmente no hacemos reembolsos de meses parciales, pero si escribes a soporte podemos revisar tu caso. Mantienes el acceso hasta el final del periodo de facturación."
+JC-18,synthetic trap,EC-006,ca-ES,FAIL,PASS,FAIL,FAIL,Contradicts itself in the second sentence,The answer contradicts itself by stating partial months are not refunded while promising to refund the unused days of the billing period.,"No es reemborsen els mesos parcials. De tota manera, si cancel·les avui, et tornarem els dies que no hagis fet servir del període de facturació."
+JC-19,synthetic trap,EC-005,es-ES,PASS,PASS,PASS,PASS,"Correct, but words it without 'periodo de facturación'",The answer clearly states that the started month is non-refundable without suggesting any exceptions or contradicting itself.,"Lo siento, pero no: el mes que ya has empezado no se devuelve. Eso sí, podrás seguir usando Pro hasta la fecha de renovación."
+JC-20,synthetic trap,EC-006,ca-ES,PASS,PASS,PASS,PASS,"Correct; support is offered for questions, not as a route to a refund",The answer clearly states that money for unused days will not be refunded and does not suggest any exception or possibility of a refund.,"Ho sento, però no et retornarem els diners dels dies que no facis servir. Pots continuar usant NovaChat fins a la data de renovació i, si tens dubtes sobre la factura, el servei d'assistència t'ajudarà."

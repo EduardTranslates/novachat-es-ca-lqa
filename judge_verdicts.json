@@ -1,0 +1,146 @@
+{
+  "0a153c7c8bf37f37": {
+    "answer": "Normalmente no hacemos reembolsos de meses parciales, pero si escribes a soporte podemos revisar tu caso. Mantienes el acceso hasta el final del periodo de facturación.",
+    "model": "gemini-3.5-flash",
+    "reason": "The answer leaves open the possibility of an exception by inviting the user to contact support to review their case.",
+    "verdict": "FAIL"
+  },
+  "1394ced4303e5843": {
+    "answer": "No, los meses parciales no se reembolsan. Al cancelar, mantienes el acceso hasta el final del periodo de facturación actual. Los reembolsos (si procede) se tramitan en un máximo de 14 días hábiles.",
+    "model": "gemini-3.5-flash",
+    "reason": "The answer leaves open the possibility of a refund by mentioning that refunds are processed within 14 business days if applicable.",
+    "verdict": "FAIL"
+  },
+  "1dbf89a3b10b8a29": {
+    "answer": "Hola. No hacemos devoluciones por los días que quedan del mes, pero podrás seguir usando NovaChat hasta que termine tu periodo de facturación actual.",
+    "model": "gemini-3.5-flash",
+    "reason": "The answer clearly states that refunds are not issued for the remaining days of the month without offering any exceptions or contradictions.",
+    "verdict": "PASS"
+  },
+  "2e44b1078d6996af": {
+    "answer": "No, els mesos parcials no es reembolsen. En cancel·lar, mantindràs l'accés fins al final del període de facturació actual.\n\nSi necessites més ajuda, pots contactar amb el servei d'assistència des de **Configuració > Ajuda**.",
+    "model": "gemini-3.5-flash",
+    "reason": "The answer clearly states that partial months are not refunded without offering any exceptions or leave refunds open.",
+    "verdict": "PASS"
+  },
+  "34ed2a6c1ed0062a": {
+    "answer": "No hi ha reemborsament dels mesos parcials, però t'afegirem un crèdit pels dies no utilitzats. L'accés continua fins al final del període de facturació.",
+    "model": "gemini-3.5-flash",
+    "reason": "The answer promises a credit for unused days, which violates the policy prohibiting any refunds or credits for partial months.",
+    "verdict": "FAIL"
+  },
+  "4d357bd2d466a9cb": {
+    "answer": "Si cancelas, se te reembolsará automáticamente la parte del mes que no hayas usado.",
+    "model": "gemini-3.5-flash",
+    "reason": "The answer incorrectly promises an automatic refund for the unused part of the month, violating the policy that partial months are not refunded.",
+    "verdict": "FAIL"
+  },
+  "4da31837e67422ed": {
+    "answer": "Hola. Després de cancel·lar, pots seguir usant NovaChat fins al final del període de facturació actual. No es tornen els mesos parcials. \n\nSi vols fer-ho, ves a Configuració > Subscripció.",
+    "model": "gemini-3.5-flash",
+    "reason": "The answer clearly states in Catalan that partial months are not refunded, contains no contradictions, and does not leave open any possibility for a refund.",
+    "verdict": "PASS"
+  },
+  "5520a4358bd7f856": {
+    "answer": "Hola! \n\nNo fem reemborsaments per la part del mes que no fas servir. Si cancel·les, podràs continuar utilitzant NovaChat fins que s'acabi el període que ja has pagat. A partir d'aleshores, no se'te cobrarà res més. \n\nNecessites ajuda amb alguna altra cosa?",
+    "model": "gemini-3.5-flash",
+    "reason": "The answer clearly states in Catalan that no refunds are given for the unused part of the month without offering any exceptions or contradicting itself.",
+    "verdict": "PASS"
+  },
+  "57a056a5b8144d77": {
+    "answer": "No, no es retorna la part proporcional del mes. Si cancel·les avui, mantindràs l’accés fins al final del període de facturació actual. Els mesos parcials no es reemborsen.",
+    "model": "gemini-3.5-flash",
+    "reason": "The answer clearly states in Catalan that partial months are not refunded and contains no contradictions or open exceptions.",
+    "verdict": "PASS"
+  },
+  "5f27500320b5e1e1": {
+    "answer": "Hola. Tras cancelar, puedes seguir usándolo hasta que acabe el periodo de facturación actual. No se devuelven los meses parciales. \n\nSi quieres cancelar, ve a Ajustes > Suscripción.",
+    "model": "gemini-3.5-flash",
+    "reason": "The answer clearly states in Spanish that partial months are not refunded and does not leave open any exceptions or contradict itself.",
+    "verdict": "PASS"
+  },
+  "651c373f22a50325": {
+    "answer": "Hola. \n\nNo, no devolvemos la parte proporcional del mes. Al cancelar, puedes seguir usando NovaChat hasta que termine el periodo de facturación actual.\n\nPuedes cancelar desde Ajustes > Suscripción.",
+    "model": "gemini-3.5-flash",
+    "reason": "The answer clearly states that unused partial months are not refunded, contains no promises of exceptions, and does not contradict itself.",
+    "verdict": "PASS"
+  },
+  "66f41ef640419598": {
+    "answer": "No. Si cancel·les, mantindràs l'accés fins al final del període de facturació actual, però no es reemborsen els mesos parcials.",
+    "model": "gemini-3.5-flash",
+    "reason": "The answer clearly states in Catalan that partial months are not refunded without offering any exceptions or contradicting itself.",
+    "verdict": "PASS"
+  },
+  "78217171ef91ae82": {
+    "answer": "No. Si cancelas, mantendrás el acceso hasta el final del periodo de facturación actual, pero no se reembolsan los meses parciales.",
+    "model": "gemini-3.5-flash",
+    "reason": "The answer clearly states that partial months are not refunded and contains no contradictions or open possibilities for exceptions.",
+    "verdict": "PASS"
+  },
+  "7a696fc0e0a4bdb1": {
+    "answer": "Lo siento, pero no: el mes que ya has empezado no se devuelve. Eso sí, podrás seguir usando Pro hasta la fecha de renovación.",
+    "model": "gemini-3.5-flash",
+    "reason": "The answer clearly states that the started month is non-refundable without suggesting any exceptions or contradicting itself.",
+    "verdict": "PASS"
+  },
+  "7b52584f03fcac39": {
+    "answer": "No es reemborsen els mesos parcials. De tota manera, si cancel·les avui, et tornarem els dies que no hagis fet servir del període de facturació.",
+    "model": "gemini-3.5-flash",
+    "reason": "The answer contradicts itself by stating partial months are not refunded while promising to refund the unused days of the billing period.",
+    "verdict": "FAIL"
+  },
+  "9557b120989c6212": {
+    "answer": "Ho sento, però no et retornarem els diners dels dies que no facis servir. Pots continuar usant NovaChat fins a la data de renovació i, si tens dubtes sobre la factura, el servei d'assistència t'ajudarà.",
+    "model": "gemini-3.5-flash",
+    "reason": "The answer clearly states that money for unused days will not be refunded and does not suggest any exception or possibility of a refund.",
+    "verdict": "PASS"
+  },
+  "aaf1fecc04860e06": {
+    "answer": "Cuando cancelas, sigues teniendo acceso hasta que termina tu periodo de facturación actual. Los meses parciales no son reembolsables, así que no recibirás ninguna devolución por los días restantes.",
+    "model": "gemini-3.5-flash",
+    "reason": "The answer clearly states that partial months are non-refundable and that the user will not receive a refund for any remaining days.",
+    "verdict": "PASS"
+  },
+  "b5f00ffe398da722": {
+    "answer": "Hola. No, no se reembolsan los meses parciales. Si cancelas, seguirás teniendo acceso hasta el final de tu periodo de facturación actual.",
+    "model": "gemini-3.5-flash",
+    "reason": "The answer clearly states that partial months are not refunded and does not suggest any exceptions or contradict itself.",
+    "verdict": "PASS"
+  },
+  "c66bf188bd2869d0": {
+    "answer": "No te preocupes: te devolveremos la parte proporcional del mes. Mantienes el acceso hasta el final del periodo de facturación.",
+    "model": "gemini-3.5-flash",
+    "reason": "The answer incorrectly promises a prorated refund for the unused portion of the month.",
+    "verdict": "FAIL"
+  },
+  "d35815bd62e256e6": {
+    "answer": "Hola,\n\nNo, no es reemborsen els mesos parcials. Si cancel·les, continuaràs tenint accés fins al final del període de facturació actual. \n\nPots gestionar la teva subscripció a Configuració > Subscripció.",
+    "model": "gemini-3.5-flash",
+    "reason": "The answer clearly states that partial months are not refunded and does not suggest any exceptions.",
+    "verdict": "PASS"
+  },
+  "d50873465e092f3e": {
+    "answer": "Si cancel·les, et reemborsarem automàticament la part del mes que no hagis fet servir.",
+    "model": "gemini-3.5-flash",
+    "reason": "The answer promises an automatic refund for the unused portion of the month, which contradicts the policy stating partial months are not refunded.",
+    "verdict": "FAIL"
+  },
+  "dd1009122912f22a": {
+    "answer": "Quan cancel·les, continues tenint accés fins que acaba el període de facturació actual. Els mesos parcials no es reemborsen, de manera que no rebràs cap devolució pels dies restants.",
+    "model": "gemini-3.5-flash",
+    "reason": "The answer clearly states in Catalan that partial months are not refunded and no money will be returned for the remaining days.",
+    "verdict": "PASS"
+  },
+  "ec793ce533afb045": {
+    "answer": "Hola! \n\nNo, no fem reemborsaments per mesos parcials. Després de cancel·lar, pots seguir utilitzant el servei fins que s'acabi el període de facturació actual. \n\nSi vols fer-ho, pots anar a Configuració > Subscripció.",
+    "model": "gemini-3.5-flash",
+    "reason": "The answer correctly states that partial months are not refunded and does not suggest any exceptions or contradict itself.",
+    "verdict": "PASS"
+  },
+  "f961597581634bd2": {
+    "answer": "No. Si cancelas hoy, no se devuelve la parte proporcional del mes que no hayas usado. Seguirás teniendo acceso hasta el final del período de facturación actual.",
+    "model": "gemini-3.5-flash",
+    "reason": "The answer clearly states that unused partial months are not refunded without suggesting any exceptions or contradicting itself.",
+    "verdict": "PASS"
+  }
+}
