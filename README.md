@@ -4,7 +4,7 @@
 
 <img src="assets/novachat_summary.png" width="100%" style="max-width:100%; height:auto;" alt="NovaChat ES/CA: from LQA audit to a tested AI support assistant. 28 defects, 12 test cases, 72 real answers from 4 models. Baseline prompt passed 2/12 cases; grounded prompt 10/12 on Gemini 3.5 Flash-Lite, 12/12 on Gemini 3.8 Flash, 10/12 on Nemotron 3 Ultra and 12/12 on ERNIE 5.5 Flash.">
 
-**Jump to:** [Defect Log Sample](#6-defect-log-sample) · [Real-Model Evaluation (4 LLMs)](#8-evaluation-on-real-models) · [Full Eval & Judge Report](evals/RESULTS.md) · [Python UI Checker](lqa-checker/)
+**Jump to:** **Jump to:** [Interactive Dashboard (Live)](https://novachat-dashboard-eight.vercel.app/) · [Defect Log Sample](#6-defect-log-sample) · [Real-Model Evaluation (4 LLMs)](#8-evaluation-on-real-models) · [Full Eval & Judge Report](evals/RESULTS.md) · [Python UI Checker](lqa-checker)
 
 ### Quick reproduce (no API key needed)
 
