@@ -195,7 +195,7 @@ Automatic checks and human review agreed on pass/fail for 47 of 48 Gemini answer
 | `evals/` | Promptfoo suite: `eval_cases.jsonl` (12 test cases), system prompts, Python assertions, model-graded refund judge, offline mock answers, recorded answers from Gemini and OpenRouter models |
 | `evals/RESULTS.md` | Real-model run: setup, case-by-case results, human review, judge calibration, limitations |
 | `evals/recorded/human_review.csv` | Automatic result and human verdict for all 72 answers (4 models) |
-
+| [Interactive Dashboard (Vercel)](https://novachat-dashboard-eight.vercel.app/) | Web dashboard to filter all 28 MQM defects, compare the 72 recorded answers across 4 LLMs, and inspect the 20/20 judge calibration ([source repo](https://github.com/EduardTranslates/novachat-dashboard)) |
 ---
 
 ## 11. Future Work
