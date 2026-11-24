@@ -163,12 +163,12 @@ Automatic checks and human review agreed on pass/fail for 47 of 48 Gemini answer
 
 ---
 
-## 9. Recommended Fixes
+## 9. Next Fixes
 
 | Priority | Action | Owner | Effort |
 |---|---|---|---|
 | P0 | Update system prompt with authoritative UI map and policy text | AI/Engineering | Medium |
-:white_check_mark:| P1 | Create bilingual ES/CA glossary (50+ terms) | Localization | Low |
+| ✅ | Create bilingual ES/CA glossary (50+ terms) | Localization | Low |
 | P1 | Shorten over-limit strings (D-010) and run the length check on the full string set | Localization | Low |
 | P2 | Implement 5 regression tests (see below) | QA/Engineering | Medium |
 | P2 | Replace gendered greetings with neutral alternatives | Localization | Low |
