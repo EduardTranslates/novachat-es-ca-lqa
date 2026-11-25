@@ -1,11 +1,10 @@
 # NovaChat: AI Chatbot Localization QA Case Study (Spanish & Catalan)
 
-> **Self-initiated demo project using synthetic/sample data.** No confidential client content is included. NovaChat, its UI, policies, strings, and defect examples are fabricated for portfolio demonstration purposes. The audit scope figures below (380 items) describe a simulated audit; this repository contains the 28 logged defects, a 20-string synthetic UI sample, a 20-answer judge calibration set, and 72 real model answers to synthetic test questions (Section 8).
+> **Self-initiated demo project using synthetic/sample data.** No confidential client content is included. NovaChat, its UI, policies, strings, and defect examples are fabricated for portfolio demonstration purposes. The simulated audit scope figures (380 items) describe the initial audit context; this repository contains the 28 logged defects in `defect_log.csv`, a 20-string synthetic UI sample, a 20-answer refund-policy judge calibration set, and 72 real model answers to synthetic test questions (Section 8).
 
-🚀 **[Try the Live Interactive Web App & AI Sandbox](https://novachat-es-ca-lqa.vercel.app/)**  
+🚀 [**Try the Live Interactive Web App & AI Sandbox**](https://novachat-es-ca-lqa.vercel.app/)
+
 Jump to: [Live App & Screenshots](#7-interactive-live-web-app) · [Defect Log Sample](#4-defect-log-sample) · [Python UI Checker](#6-automated-python-lqa-checker) · [Real-Model Evaluation (4 LLMs)](#8-evaluation-on-real-models-4-llms--6-runs--72-answers) · [Full Eval & Judge Report](evals/RESULTS.md) · [Authorship Note](#authorship--ai-assistance-note)
-
-<img src="assets/novachat_summary.png" alt="NovaChat ES/CA Localization QA and 4-Model LLM Evaluation Summary" width="100%">
 
 ---
 
@@ -14,19 +13,20 @@ Jump to: [Live App & Screenshots](#7-interactive-live-web-app) · [Defect Log Sa
 **NovaChat** is a fictional SaaS messaging platform with a bilingual (**Spanish `es-ES`** and **Catalan `ca-ES`**) customer support chatbot and web/mobile UI.
 
 The goal of this project is to demonstrate an end-to-end **Localization QA + AI Evaluation** workflow from first principles:
-1. Auditing product strings, system messages, and AI chatbot replies using an **MQM-adapted** framework.
+
+1. Auditing product strings, system messages, onboarding copy, and AI chatbot replies using an **MQM-adapted** framework.
 2. Building deterministic **zero-dependency Python regression checks** for mechanical and terminology defects.
 3. Designing a **12-case Promptfoo diagnostic suite** and auditing **100% of 72 real model answers** across four LLMs.
-4. Calibrating an **LLM-as-a-judge** against brittle regex checks on adversarial policy phrasing.
+4. Calibrating a **refund-policy LLM-as-a-judge** against brittle regex checks on adversarial policy phrasing.
 5. Deploying an **interactive Next.js + Python Serverless QA lab** where reviewers can test Baseline vs. Grounded prompts and run `lqa_checks.py` live in the browser.
 
-**Core empirical takeaway:** **Grounding isn't linguistic QA.** Grounding fixed all 8 Critical factual hallucinations observed in the ungrounded baseline (`0` across all 5 grounded runs), yet Spanish-to-Catalan interference, pre-2016 IEC diacritics, and subtle Catalan grammar errors kept slipping past grounded prompts and automated code.
+**Core empirical takeaway:** **Grounding isn't linguistic QA.** Grounding fixed all 8 Critical factual hallucinations observed in the ungrounded Flash-Lite baseline (`0` across all 5 grounded runs), yet Spanish-to-Catalan interference, pre-2016 IEC diacritics, and subtle Catalan grammar errors kept slipping past grounded prompts and automated code.
 
 ---
 
 ## 2. Simulated Audit Scope & Methodology
 
-* **Simulated product scope:** 380 bilingual items across UI strings, system notifications, onboarding flows, and 30 initial AI support replies per locale (`es-ES` and `ca-ES`).
+* **Simulated product scope:** 380 bilingual items across UI strings, system notifications, onboarding flows, and AI support replies (`es-ES` and `ca-ES`).
 * **Error taxonomy:** MQM-adapted categories covering *Accuracy*, *Terminology*, *Fluency*, *Cultural / dialectal appropriateness*, *Tone / brand voice*, *Locale conventions*, *UX clarity*, *Hallucination / factual risk*, and *Safety / policy consistency*.
 * **Severity scale:**
   * **Critical:** Factual hallucination, policy contradiction with legal/financial liability, or broken navigation path.
@@ -35,9 +35,11 @@ The goal of this project is to demonstrate an end-to-end **Localization QA + AI 
 
 ---
 
-## 3. Initial Audit Summary (28 Logged Defects)
+## 3. Initial Audit Summary (28 Logged Defects in `defect_log.csv`)
 
 The repository logs **28 representative defects** (`defect_log.csv`):
+
+* **By content type:** `13 UI strings` · `8 system messages` · `4 AI responses` · `3 onboarding`
 * **By severity:** `3 Critical` (AI-response archetypes `D-002`, `D-005`, `D-006`) · `11 Major` · `14 Minor`
 * **By locale:** `15 es-ES` · `13 ca-ES`
 
@@ -67,7 +69,7 @@ Selected entries from [`defect_log.csv`](defect_log.csv) illustrating how defect
 
 ## 5. Root-Cause Analysis & QA Strategy
 
-1. **Ungrounded prompts cause confident policy fabrication:** Without an authoritative UI map, glossary, and refund policy injected into the system prompt, models invent non-existent menus (`Facturación`), pricing (€12 Pro plan), and discounts (50% student discount).
+1. **Ungrounded prompts cause confident policy fabrication:** Without an authoritative UI map, glossary, and refund policy injected into the system prompt, the ungrounded baseline invented non-existent menus (`Facturación`), pricing (€12 Pro plan), and discounts (50% student discount).
 2. **Mechanical checks waste senior linguist bandwidth:** Catching broken ICU variables, character-limit violations, missing Spanish opening `¿`, Catalan `l.l` typos, and known Castilianisms is deterministic and belongs in automated CI.
 3. **Regex breaks on adversarial policy phrasing:** Keyword-based regex fails on polite negation traps (e.g., *"No te preocupes, te devolveremos..."* or loopholes like *"(si procede)"*), requiring a calibrated semantic LLM judge.
 4. **Human review remains the final safety net:** Subtle Catalan clitic morphology, verb-person slips, brand tone, and unverified policy extrapolations (`QUERY`) require bilingual human judgment.
@@ -77,9 +79,10 @@ Selected entries from [`defect_log.csv`](defect_log.csv) illustrating how defect
 ## 6. Automated Python LQA Checker
 
 Located in [`lqa-checker/`](lqa-checker/), `lqa_checks.py` is a **zero-dependency Python standard-library script** implementing 8 deterministic checks:
+
 * Placeholder & ICU syntax integrity (`{name}`, `{count}`)
 * UI string character-limit flags *(checks character counts against mobile length thresholds, not visual viewport rendering)*
-* Bilingual ES/CA glossary enforcement
+* Bilingual ES/CA glossary enforcement — **Two glossary profiles: Core (6 terms) and Extended (56 terms, including Core)**
 * Missing Spanish inverted punctuation (`¿`, `¡`)
 * Gendered greeting detection (e.g., masculine generic *Bienvenido*)
 * Catalan *punt volat* typo detection (`l.l` → `l·l`)
@@ -87,6 +90,7 @@ Located in [`lqa-checker/`](lqa-checker/), `lqa_checks.py` is a **zero-dependenc
 * Pre-2016 IEC Catalan diacritic accent detection (e.g., `vés` → `ves`)
 
 **Validation on `sample_strings.csv` (20 synthetic UI strings):**
+
 * **12 / 12** seeded defective strings caught (**14 issues**: 7 Major, 7 Minor)
 * **0 false positives** across **8** clean control strings
 * Unit tests in `lqa-checker/test_lqa_checks.py`
@@ -103,14 +107,14 @@ python3 -m unittest test_lqa_checks.py
 
 To turn this static audit into a hands-on QA laboratory, I deployed a companion web application built with **Next.js + Vercel Python Serverless** ([`novachat-dashboard`](https://github.com/EduardTranslates/novachat-dashboard)):
 
-* **Live URL:** [https://novachat-es-ca-lqa.vercel.app/](https://novachat-es-ca-lqa.vercel.app/)
-* **Live Baseline vs. Grounded AI Sandbox:** Toggle or compare ungrounded vs. grounded prompts side by side in ES/CA while `lqa_checks.py` scans every reply in real time.
-* **Live Python 3.12 LQA Checker (Layer 1 + Layer 2):** Run deterministic Python checks live in the browser (`0.45–1.63 ms`) with switchable **Core (6 terms)** and **Extended SaaS & Support (56 terms)** ES/CA glossaries, plus optional AI semantic/grammar auditing.
-* **Audit Explorers & Trilingual Project Story:** Inspect all 28 MQM defects, 72 recorded answers, and the 20/20 judge calibration, or read the jargon-free 1-minute Project Story transcreated into **EN, ES, and CA**.
+* **Live URL:** <https://novachat-es-ca-lqa.vercel.app/>
+* **Live Baseline vs. Grounded AI Sandbox:** Toggle or compare ungrounded vs. grounded prompts side by side in ES/CA while `lqa_checks.py` scans every reply in real time. Each reply explicitly displays whether it was served live (`LIVE · model · ms`) or via offline fallback (`REPLAY · model`).
+* **Live Python 3.12 LQA Checker (Layer 1 + Optional Layer 2):** Runs deterministic Python checks directly in Vercel Serverless (**observed Python rule-execution time: `0.45–1.63 ms` on the documented demo inputs; excludes network and serverless startup**) with switchable **Core (6 terms)** and **Extended (56 terms, including Core)** glossary profiles, plus an optional live AI semantic/grammar review.
+* **Audit Explorers & Trilingual Project Story:** Inspect all 28 MQM defects, 72 recorded answers, and the 20/20 refund-policy judge calibration, or read the jargon-free 1-minute Project Story transcreated into **EN, ES, and CA**.
 
 | Executive Overview | Live AI Sandbox (`Compare Both`) | Live Python LQA Checker (56 Terms) |
 | :---: | :---: | :---: |
-| ![Executive Overview](assets/overview.png) | ![Live NovaChat Sandbox](assets/sandbox-compare.png) | ![Live Python LQA Checker](assets/live-checker.png) |
+| ![Executive Overview](assets/overview.png) | ![Live AI Sandbox](assets/sandbox-compare.png) | ![Live Python LQA Checker](assets/live-checker.png) |
 
 ---
 
@@ -120,32 +124,37 @@ Full case-by-case results, prompts, assertions, and judge calibration details ar
 
 ### Experimental Design & Results (6 Runs Across 4 Models)
 
-Only **Gemini 3.5 Flash-Lite** was run in both ungrounded (`baseline`) and `grounded` conditions to establish a paired control. The other three models were run in the `grounded` condition to test cross-model and cross-vendor transfer (**1 baseline + 5 grounded runs = 6 runs × 12 cases = 72 recorded answers**).
+**One Flash-Lite baseline and five grounded runs across four models, evaluated on the same 12 cases** (`6 runs × 12 cases = 72 recorded answers`). Within-model baseline/grounded comparison is available for **Gemini 3.5 Flash-Lite**; the other three models were evaluated under grounded conditions only to test cross-model and cross-vendor transfer.
 
-| Run | Model | Condition | Cases | Critical Hallucinations | Auto Pass | Human Pass / Query | Key Finding |
+* **Why two grounded runs on Gemini 3.5 Flash-Lite?** `Run 1` was recorded during the initial Promptfoo run (15 Nov 2026, `temperature 0`); `Run 2` was recorded via `record_responses.py` with the identical `prompt.yaml` at `temperature 0` to check run-to-run consistency (both runs scored `10/12` auto and `8 PASS · 2 QUERY · 2 FAIL` human, while showing non-deterministic failure shifts across individual cases).
+
+| Run | Model | Condition | Cases | Critical Hallucinations | Auto Pass | Human Pass / Query / Fail | Key Finding |
 | :---: | :--- | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | Gemini 3.5 Flash-Lite | Baseline (ungrounded) | 12 | **8** | 2/12 | 1 PASS · 11 FAIL | Fabricated €12 Pro plan, 50% student discount, refund windows & menu paths |
-| 2 | Gemini 3.5 Flash-Lite | Grounded (Run 1) | 12 | **0** | 10/12 | 8 PASS · 2 QUERY · 2 FAIL | Pre-2016 IEC accent (`vés` → `ves`); Spanish menu leak in CA |
-| 3 | Gemini 3.5 Flash-Lite | Grounded (Run 2) | 12 | **0** | 10/12 | 8 PASS · 2 QUERY · 2 FAIL | Pre-2016 IEC accent (`vés` → `ves`); Catalan clitic (`se'te cobrarà` → `se't cobrarà`) |
-| 4 | Gemini 3.8 Flash | Grounded | 12 | **0** | 12/12 | 12 PASS | Passed all 12 diagnostic checks on a single run |
+| 1 | Gemini 3.5 Flash-Lite | Baseline (ungrounded) | 12 | **8** | 2/12 | 1 PASS · 0 QUERY · 11 FAIL | Fabricated €12 Pro plan, 50% student discount, refund windows & menu paths |
+| 2 | Gemini 3.5 Flash-Lite | Grounded (Run 1 — Promptfoo) | 12 | **0** | 10/12 | 8 PASS · 2 QUERY · 2 FAIL | Pre-2016 IEC accent (`vés` → `ves`); Spanish menu leak in CA |
+| 3 | Gemini 3.5 Flash-Lite | Grounded (Run 2 — consistency check) | 12 | **0** | 10/12 | 8 PASS · 2 QUERY · 2 FAIL | Pre-2016 IEC accent (`vés` → `ves`); Catalan clitic (`se'te cobrarà` → `se't cobrarà`) |
+| 4 | Gemini 3.8 Flash | Grounded | 12 | **0** | 12/12 | 12 PASS · 0 QUERY · 0 FAIL | Passed all 12 diagnostic checks on a single run |
 | 5 | NVIDIA Nemotron 3 Ultra | Grounded (cross-vendor) | 12 | **0** | 10/12 | 7 PASS · 2 QUERY · 3 FAIL | Policy loophole `(si procede)`, Castilianism `reembolsen`, verb slip (`escrivim` → `escriu`) |
-| 6 | Baidu ERNIE 5.5 Flash | Grounded (cross-vendor) | 12 | **0** | 12/12 | 12 PASS | Passed all 12 diagnostic checks on a single run |
+| 6 | Baidu ERNIE 5.5 Flash | Grounded (cross-vendor) | 12 | **0** | 12/12 | 12 PASS · 0 QUERY · 0 FAIL | Passed all 12 diagnostic checks on a single run |
 
-### Data Universes & Metric Definitions
+### Four Data Collections with Distinct Purposes & Metric Definitions
 
-To avoid conflating distinct evaluation sets, each metric in this project maps to a separate artifact:
+To avoid conflating distinct evaluation sets, each metric in this project maps to a specific artifact:
 
-* **Initial MQM Audit Inventory (28 defects):** Product-level LQA audit across synthetic UI strings, system messages, and 30 initial AI responses per locale (includes the 3 Critical AI-response archetypes `D-002`, `D-005`, `D-006`). The 3-layer detection split (`17/28` Python · `4/28` Promptfoo/Judge · `7/28` Human) reflects primary detection-layer attribution across these 28 logged defects.
-* **Real-Model Evaluation (72 answers):** 12 targeted ES/CA cases × 6 recorded runs across 4 models (`8 → 0` Critical hallucinations compares the single ungrounded baseline against the 5 grounded runs).
-* **Auto vs. Human Agreement (`70/72`):** Binary pass/fail agreement at response level. Both disagreements are **Auto PASS / Human FAIL** due to Catalan grammar defects (`se'te cobrarà` → `se't cobrarà`; `escrivim` → `escriu`). The **6 `QUERY` labels** are grounded answers that extrapolated cancellation rules to plan downgrades—escalated to a Product Owner (PO) for confirmation rather than scored as fail disagreements.
-* **Judge Calibration Set (20 answers):** Agreement on the single-reviewer calibration set (`20/20` calibrated LLM judge vs. `14/20` replaced regex pair and `16/20` broadened access regex). This verifies rubric sanity on the calibration set; validation on an independent held-out set is planned under Future Work.
-* **UI Checker Batch Sample (20 strings):** Synthetic `sample_strings.csv` set used to test `lqa_checks.py` character-limit, placeholder, punctuation, and glossary rules (`12/12` seeded strings caught, `0` false positives on 8 clean controls).
+* **Initial MQM Audit Inventory (`defect_log.csv` — 28 defects):** Logged product-level LQA defects (`13 UI strings, 8 system messages, 4 AI responses, 3 onboarding`; includes the 3 Critical AI-response archetypes `D-002`, `D-005`, `D-006`). The 3-layer detection split (`17/28` Python · `4/28` Promptfoo/Judge · `7/28` Human) reflects primary detection-layer attribution across these 28 logged defects.
+* **Real-Model Evaluation (`human_review.csv` — 72 answers):** 12 targeted ES/CA cases × 6 recorded runs across 4 models (`8 → 0` Critical hallucinations compares the single ungrounded Flash-Lite baseline against the 5 grounded runs).
+* **Auto vs. Human Agreement (`70/72` and `64/66`):**
+  * **`70/72`** measures **FAIL vs. non-FAIL** agreement at response level (counting the 6 Auto PASS / Human `QUERY` escalations as non-fail).
+  * **`64/66`** measures agreement on **decisive pass/fail verdicts excluding `QUERY`**.
+  * Exact breakdown across all 72 replies: `48` Auto PASS / Human PASS · `16` Auto FAIL / Human FAIL · `6` Auto PASS / Human `QUERY` (grounded answers that extrapolated cancellation rules to plan downgrades in `EC-001`/`EC-002`, escalated to a Product Owner) · `2` Auto PASS / Human FAIL (Catalan grammar defects: `se'te cobrarà` → `se't cobrarà`; `escrivim` → `escriu`).
+* **Judge Calibration Set (`judge_calibration_results.csv` — 20 answers):** Agreement on the single-reviewer calibration set (`20/20` calibrated LLM judge vs. `14/20` replaced regex pair and `16/20` broadened access regex). **The `20/20` calibration result applies only to the refund-policy judge (`EC-005`/`EC-006`), not to the optional live semantic/grammar review.** Validation on an independent held-out set is planned under Future Work.
+* **UI Checker Batch Sample (`sample_strings.csv` — 20 strings):** Synthetic batch used to test `lqa_checks.py` character-limit, placeholder, punctuation, and glossary rules (`12/12` seeded strings caught, `0` false positives on 8 clean controls).
 
 ### What It Shows
 
 1. **Grounding fixed critical factual hallucinations in this test.** All 8 Critical hallucinations in the ungrounded Flash-Lite baseline dropped to `0` across all 5 grounded runs (4 models).
 2. **Grounding is not linguistic QA.** Even with grounded prompts, Flash-Lite and Nemotron 3 Ultra still produced Spanish-to-Catalan interference, pre-2016 IEC diacritics (`vés` → `ves`), and subtle Catalan grammar errors.
-3. **Three-layer QA architecture:** Deterministic Python rules catch mechanical and terminology defects (including mobile character-limit thresholds, not visual viewport rendering); the calibrated semantic LLM judge catches policy loopholes and negation traps; bilingual human review catches grammar (`se'te cobrarà` → `se't cobrarà`, `escrivim` → `escriu`), naturalness, and `QUERY` escalations.
+3. **Three-layer QA architecture:** Deterministic Python rules catch mechanical and terminology defects (including mobile character-limit thresholds, not visual viewport rendering); the calibrated semantic LLM judge catches refund-policy loopholes and negation traps; bilingual human review catches grammar (`se'te cobrarà` → `se't cobrarà`, `escrivim` → `escriu`), naturalness, and `QUERY` escalations.
 4. **Cross-vendor testing exposes suite gaps:** Running Nemotron 3 Ultra surfaced narrow no-break spaces (`U+202F`) inside `14 días`, the Castilianism `reembolsen`, and a real-world policy loophole (`"(si procede)"`) that four Gemini runs never triggered. Five suite gaps found from real outputs are now covered by regression checks.
 
 ### Scope & Honest Limitations
@@ -156,21 +165,21 @@ To avoid conflating distinct evaluation sets, each metric in this project maps t
 
 ---
 
-## 9. Fixes & Implementation Status
+## 9. Recommended Fixes & Implementation Status
 
 | Priority | Action | Owner | Effort |
 | :---: | :--- | :--- | :---: |
 | **P0** | Inject authoritative bilingual UI map, glossary, and refund policy into system prompt — ✅ **Implemented & verified (`8 → 0` Critical hallucinations)** | AI / Prompt Eng | Low |
-| **P1** | Create bilingual ES/CA glossary (50+ terms) — ✅ **Implemented (56 terms)** in the [Live LQA Checker](https://novachat-es-ca-lqa.vercel.app/) | Localization | Low |
+| **P1** | Create bilingual ES/CA glossary (50+ terms) — ✅ **Implemented: Core (6) & Extended (56, incl. Core)** in the [Live LQA Checker](https://novachat-es-ca-lqa.vercel.app/) | Localization | Low |
 | **P1** | Integrate deterministic Python LQA checks into CI/CD before string freeze — ✅ **Implemented** in [`novachat-dashboard`](https://github.com/EduardTranslates/novachat-dashboard) | Loc Eng | Medium |
-| **P2** | Replace brittle policy regex assertions with calibrated LLM-as-a-judge — ✅ **Implemented (`20/20` calibration agreement)** | AI QA | Medium |
+| **P2** | Replace brittle refund-policy regex assertions with calibrated LLM-as-a-judge — ✅ **Implemented (`20/20` calibration agreement)** | AI QA | Medium |
 | **P2** | Establish `QUERY` escalation SLA with Product Owners for policy edge cases (e.g., downgrade vs. cancellation rules) | Product / QA | Low |
 
 ---
 
 ## Authorship & AI-Assistance Note
 
-Evaluation architecture, MQM audit, defect rationales, bilingual ES/CA glossaries (6 Core + 56 Extended terms), deterministic Python LQA rules, Promptfoo test cases, adversarial calibration traps, and 100% of human review (72 answers + 20 calibration labels) were designed, written, and verified by the author. AI coding assistance was used to accelerate frontend scaffolding for the companion Next.js web dashboard (`novachat-dashboard`).
+Evaluation architecture, MQM audit, defect rationales, two bilingual ES/CA glossary profiles — **Core (6 terms) and Extended (56 terms, including Core)** — deterministic Python LQA rules, Promptfoo test cases, adversarial calibration traps, and 100% of human review (72 answers + 20 calibration labels) were designed, written, and verified by the author. AI coding assistance was used to accelerate frontend scaffolding for the companion Next.js web dashboard (`novachat-dashboard`).
 
 ---
 
@@ -180,9 +189,8 @@ Evaluation architecture, MQM audit, defect rationales, bilingual ES/CA glossarie
 | :--- | :--- |
 | [`README.md`](README.md) | This case study and methodology overview |
 | [`LICENSE`](LICENSE) | MIT License for original code and documentation |
-| [`assets/novachat_summary.png`](assets/novachat_summary.png) | One-page visual summary infographic |
 | `assets/overview.png`, `sandbox-compare.png`, `live-checker.png` | Live dashboard screenshots (Section 7) |
-| [`defect_log.csv`](defect_log.csv) | Full MQM-adapted defect log (28 defects) |
+| [`defect_log.csv`](defect_log.csv) | Full MQM-adapted defect log (28 defects: 13 UI, 8 system, 4 AI, 3 onboarding) |
 | [`lqa-checker/`](lqa-checker/) | Zero-dependency Python UI checker (`lqa_checks.py`), synthetic strings (`sample_strings.csv`), glossary, rules & unit tests |
 | [`evals/`](evals/) | Promptfoo suite (`eval_cases.jsonl`), baseline & grounded prompts, Python assertions, calibrated refund judge, mock & recorded outputs |
 | [`evals/RESULTS.md`](evals/RESULTS.md) | Case-by-case evaluation report, human review analysis, judge calibration & limitations |
@@ -204,5 +212,6 @@ Evaluation architecture, MQM audit, defect rationales, bilingual ES/CA glossarie
 Released under the [MIT License](LICENSE).
 
 **Author:** Eduard Aliod Gil — AI QA Reviewer & Localization Specialist (`ES / CA / EN`)  
-🔗 [LinkedIn](https://www.linkedin.com/in/eduardtranslates) · 🚀 [Live NovaChat App](https://novachat-es-ca-lqa.vercel.app/) · 📩 eduardtranslates@gmail.com  
+🔗 [LinkedIn](https://www.linkedin.com/in/eduardtranslates) · 🚀 [Live NovaChat App](https://novachat-es-ca-lqa.vercel.app/) · 📩 eduardtranslates@gmail.com
+
 *Self-initiated portfolio project · September–November 2026.*
