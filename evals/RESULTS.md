@@ -1,5 +1,7 @@
 # Results: NovaChat ES/CA Eval Set on Gemini and OpenRouter Models (November 2026)
 
+> **Interactive Explorer:** Inspect all 72 recorded answers, human labels, and side-by-side model comparisons in the [Live NovaChat Dashboard](https://novachat-es-ca-lqa.vercel.app/).
+
 > **Synthetic data only.** Fictional product, policies and menu paths. Answers are real API outputs (Gemini, plus two OpenRouter models in the [cross-vendor run](#cross-vendor-run-openrouter-16-november-2026)), saved in [`recorded/responses.json`](recorded/responses.json).
 
 ## Setup
@@ -19,16 +21,16 @@ Reproduce the grading with no API key: `npx promptfoo@latest eval -c promptfooco
 
 ## Summary
 
-| Run | Passed | Failed | Missing |
-|---|---|---|---|
-| Baseline / gemini-3.5-flash-lite | 2 | **10** | 0 |
-| Grounded / gemini-3.5-flash-lite (run 1) | 10 | 2 | 0 |
-| Grounded / gemini-3.5-flash-lite (run 2) | 10 | 2 | 0 |
-| Grounded / gemini-3.8-flash | **12** | 0 | 0 |
-| Grounded / Nemotron 3 Ultra (OpenRouter) | 10 | 2 | 0 |
-| Grounded / ERNIE 5.5 Flash (OpenRouter) | 12 | 0 | 0 |
+| Run | Auto Passed | Auto Failed | Human Verdict (PASS / QUERY / FAIL) |
+| --- | :---: | :---: | :---: |
+| Baseline / `gemini-3.5-flash-lite` | 2 | 10 | 1 PASS · 0 QUERY · 11 FAIL |
+| Grounded / `gemini-3.5-flash-lite` (run 1) | 10 | 2 | 8 PASS · 2 QUERY · 2 FAIL |
+| Grounded / `gemini-3.5-flash-lite` (run 2) | 10 | 2 | 8 PASS · 2 QUERY · 2 FAIL |
+| Grounded / `gemini-3.8-flash` | 12 | 0 | 12 PASS · 0 QUERY · 0 FAIL |
+| Grounded / `Nemotron 3 Ultra` (OpenRouter) | 10 | 2 | 9 PASS · 2 QUERY · 1 FAIL |
+| Grounded / `ERNIE 5.5 Flash` (OpenRouter) | 12 | 0 | 12 PASS · 0 QUERY · 0 FAIL |
 
-`gemini-3.8-flash` EC-001, EC-003 and EC-007 failed first with HTTP 502 errors and then with the free-tier quota (20 requests per model per day). They were recorded on 16 November with a new key.
+**Overall 6-run agreement (72 answers):** Automated checks and bilingual human review agreed on **70/72** answers for FAIL vs. non-FAIL (counting the 6 Auto-PASS / Human-QUERY Product Owner escalations as non-fail), and **64/66** on decisive pass/fail verdicts excluding `QUERY`. Both misses were Catalan grammar defects (`EC-006` baseline `se'te cobrarà`; `EC-012` grounded Nemotron `escrivim`).
 
 ## Case-by-case review
 
@@ -135,8 +137,7 @@ Problems found by reading the baseline answers that no assertion flagged:
 
 | Answer (excerpt) | Issue | Category |
 |---|---|---|
-| "No se'te cobrarà res més" (EC-006) | Wrong clitic: "se't" | Fluency |
-| "El descompte s'aplicarà en el pròxim cicle" (EC-002) | Says "discount" for a plan change | Accuracy |
+| "No se'te cobrarà res més" (EC-006, baseline) | Wrong clitic: "se't" | Fluency || "El descompte s'aplicarà en el pròxim cicle" (EC-002) | Says "discount" for a plan change | Accuracy |
 | "vés a la teua configuració" (EC-002, EC-007) | Valencian "teua" in a product that uses central "teu/teva" | Cultural / dialectal (inconsistency, not an error) |
 | "¡Qué bueno tenerte por aquí!" (EC-011, grounded run 1) | More typical of Latin American Spanish; es-ES would say "Qué bien" | Cultural / dialectal (Minor, debatable) |
 
