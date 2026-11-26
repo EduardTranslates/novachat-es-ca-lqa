@@ -137,7 +137,8 @@ Problems found by reading the baseline answers that no assertion flagged:
 
 | Answer (excerpt) | Issue | Category |
 |---|---|---|
-| "No se'te cobrarà res més" (EC-006, baseline) | Wrong clitic: "se't" | Fluency || "El descompte s'aplicarà en el pròxim cicle" (EC-002) | Says "discount" for a plan change | Accuracy |
+| "No se'te cobrarà res més" (EC-006, baseline) | Wrong clitic: "se't" | Fluency |
+| "El descompte s'aplicarà en el pròxim cicle" (EC-002) | Says "discount" for a plan change | Accuracy |
 | "vés a la teua configuració" (EC-002, EC-007) | Valencian "teua" in a product that uses central "teu/teva" | Cultural / dialectal (inconsistency, not an error) |
 | "¡Qué bueno tenerte por aquí!" (EC-011, grounded run 1) | More typical of Latin American Spanish; es-ES would say "Qué bien" | Cultural / dialectal (Minor, debatable) |
 

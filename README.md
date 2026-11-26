@@ -110,7 +110,7 @@ To turn this static audit into a hands-on QA laboratory, I deployed a companion 
 * **Live URL:** <https://novachat-es-ca-lqa.vercel.app/>
 * **Live Baseline vs. Grounded AI Sandbox:** Toggle or compare ungrounded vs. grounded prompts side by side in ES/CA while `lqa_checks.py` scans every reply in real time. Each reply explicitly displays whether it was served live (`LIVE · model · ms`) or via offline fallback (`REPLAY · model`).
 * **Live Python 3.12 LQA Checker (Layer 1 + Optional Layer 2):** Runs deterministic Python checks directly in Vercel Serverless (**observed Python rule-execution time: `0.45–1.63 ms` on the documented demo inputs; excludes network and serverless startup**) with switchable **Core (6 terms)** and **Extended (56 terms, including Core)** glossary profiles, plus an optional live AI semantic/grammar review.
-* **Audit Explorers & Trilingual Project Story:** Inspect all 28 MQM defects, 72 recorded answers, and the 20/20 refund-policy judge calibration, or read the jargon-free 1-minute Project Story transcreated into **EN, ES, and CA**.
+* **Audit Explorers & Trilingual Project Story:** Inspect all 28 MQM defects, 72 recorded answers, and the 20/20 refund-policy judge calibration, or read the jargon-free 2-minute Project Story transcreated into **EN, ES, and CA**.
 
 | Executive Overview | Live AI Sandbox (`Compare Both`) | Live Python LQA Checker (56 Terms) |
 | :---: | :---: | :---: |
@@ -132,7 +132,7 @@ Full case-by-case results, prompts, assertions, and judge calibration details ar
 | :---: | :--- | :--- | :---: | :---: | :---: | :---: | :--- |
 | 1 | Gemini 3.5 Flash-Lite | Baseline (ungrounded) | 12 | **8** | 2/12 | 1 PASS · 0 QUERY · 11 FAIL | Fabricated €12 Pro plan, 50% student discount, refund windows & menu paths |
 | 2 | Gemini 3.5 Flash-Lite | Grounded (Run 1 — Promptfoo) | 12 | **0** | 10/12 | 8 PASS · 2 QUERY · 2 FAIL | Pre-2016 IEC accent (`vés` → `ves`); Spanish menu leak in CA |
-| 3 | Gemini 3.5 Flash-Lite | Grounded (Run 2 — consistency check) | 12 | **0** | 10/12 | 8 PASS · 2 QUERY · 2 FAIL | Pre-2016 IEC accent (`vés` → `ves`); Catalan clitic (`se'te cobrarà` → `se't cobrarà`) |
+| 3 | Gemini 3.5 Flash-Lite | Grounded (Run 2 — consistency check) | 12 | **0** | 10/12 | 8 PASS · 2 QUERY · 2 FAIL | Pre-2016 IEC accent (`vés` → `ves` on EC-007 & EC-012); no Spanish menu leak |
 | 4 | Gemini 3.8 Flash | Grounded | 12 | **0** | 12/12 | 12 PASS · 0 QUERY · 0 FAIL | Passed all 12 diagnostic checks on a single run |
 | 5 | NVIDIA Nemotron 3 Ultra | Grounded (cross-vendor) | 12 | **0** | 10/12 | 7 PASS · 2 QUERY · 3 FAIL | Policy loophole `(si procede)`, Castilianism `reembolsen`, verb slip (`escrivim` → `escriu`) |
 | 6 | Baidu ERNIE 5.5 Flash | Grounded (cross-vendor) | 12 | **0** | 12/12 | 12 PASS · 0 QUERY · 0 FAIL | Passed all 12 diagnostic checks on a single run |
